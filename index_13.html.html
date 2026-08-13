@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F5F0E6">
+<title>Soumee Adak Properties · Your Next Address, Kolkata</title>
+<meta name="description" content="A small, serious real estate practice for buying and selling fine homes in Kolkata. Soumee Adak, by appointment.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Soumee Adak Properties · Your Next Address, Kolkata">
+<meta property="og:description" content="A small, serious practice for buying and selling fine homes in Kolkata. By appointment.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230C1A28'/%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%23B3924E' stroke-width='1.5'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' fill='%23F5F0E6' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..650;1,9..144,300..650&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SOUMEE ADAK PROPERTIES  ·  Your Next Address, Kolkata
+   Responsive single-file build. HTML + CSS + vanilla JS.
+   ============================================================ */
+
+:root{
+  --ivory:      #F5F0E6;
+  --ivory-2:    #EDE6D6;
+  --navy:       #14283C;
+  --navy-deep:  #0C1A28;
+  --ink:        #1B2E42;
+  --ink-soft:   rgba(27,46,66,.68);
+  --ink-faint:  rgba(27,46,66,.5);
+  --gold:       #B3924E;
+  --terra:      #B15E38;
+  --line:       rgba(20,40,60,.16);
+  --line-soft:  rgba(20,40,60,.1);
+  --cream-line: rgba(239,232,218,.16);
+  --cream-soft: rgba(239,232,218,.72);
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:  'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --r-lg: 30px;
+  --shadow-soft: 0 34px 90px rgba(12,26,40,.16);
+}
+
+*, *::before, *::after{ box-sizing:border-box; margin:0; padding:0; }
+
+html{ scroll-behavior:smooth; }
+html, body{ overflow-x:clip; }
+
+body{
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body.lock{ overflow:hidden; }
+
+h1,h2,h3{ font-family:var(--serif); font-weight:390; line-height:1.05; letter-spacing:-.015em; color:var(--navy); }
+h1 em, h2 em, h3 em{ font-style:italic; font-weight:340; color:var(--gold); }
+p{ margin:0; }
+ul{ list-style:none; }
+a{ color:inherit; text-decoration:none; }
+img{ display:block; max-width:none; }
+:focus-visible{ outline:2px solid var(--gold); outline-offset:4px; border-radius:2px; }
+::selection{ background:var(--gold); color:var(--navy-deep); }
+
+body::-webkit-scrollbar{ width:10px; }
+body::-webkit-scrollbar-track{ background:var(--ivory-2); }
+body::-webkit-scrollbar-thumb{ background:rgba(20,40,60,.32); border-radius:10px; border:2px solid var(--ivory-2); }
+body::-webkit-scrollbar-thumb:hover{ background:rgba(20,40,60,.5); }
+
+/* Film grain */
+body::after{
+  content:"";
+  position:fixed; inset:0;
+  z-index:350;
+  pointer-events:none;
+  opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.container{ width:min(1480px, 90vw); margin-inline:auto; }
+
+/* ---------- Shared atoms ---------- */
+
+.label{
+  font:700 10.5px/1 var(--sans);
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  display:flex; align-items:center; gap:14px;
+}
+.label span{ color:var(--gold); font-weight:800; }
+.label::after{ content:""; width:44px; height:1px; background:var(--gold); opacity:.55; }
+.label.light{ color:var(--cream-soft); }
+
+.u-link{
+  position:relative;
+  display:inline-block;
+  padding-bottom:3px;
+  background-image:linear-gradient(currentColor, currentColor);
+  background-repeat:no-repeat;
+  background-position:0 100%;
+  background-size:100% 1px;
+  transition:color .4s ease, background-size .5s cubic-bezier(.6,0,.2,1);
+}
+.u-link:hover{ color:var(--terra); }
+
+.pill{
+  display:inline-flex; align-items:center; gap:12px;
+  border:1px solid var(--navy);
+  border-radius:999px;
+  padding:13px 28px;
+  font:700 12px/1 var(--sans);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--navy);
+  background:transparent;
+  cursor:pointer;
+  transition:background .45s ease, color .45s ease, border-color .45s ease;
+  will-change:transform;
+}
+.pill .arr{ transition:transform .45s cubic-bezier(.2,.7,.2,1); font-family:var(--serif); font-size:14px; }
+.pill:hover{ background:var(--navy); color:var(--ivory); }
+.pill:hover .arr{ transform:translateX(5px); }
+.pill.big{ padding:20px 40px; font-size:13px; gap:16px; }
+
+/* Split-line masks */
+.line-mask{ display:block; overflow:hidden; padding-bottom:.12em; margin-bottom:-.12em; }
+.line{ display:block; will-change:transform; }
+.tk{ display:inline-block; }
+
+/* Media placeholder (shows if a photo fails to load) */
+.ph{ position:relative; background:linear-gradient(150deg, #1E3244, #0C1A28); }
+.ph::before{
+  content:"S · A";
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  font:340 26px/1 var(--serif);
+  letter-spacing:.3em;
+  color:rgba(179,146,78,.5);
+}
+.ph img{ position:relative; z-index:1; width:100%; height:100%; object-fit:cover; }
+.ph img.is-broken{ visibility:hidden; }
+
+/* ---------- Mobile menu ---------- */
+
+.menu-btn{
+  display:none;
+  flex-direction:column; align-items:center; justify-content:center;
+  gap:7px;
+  width:46px; height:46px;
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:50%;
+  cursor:pointer;
+  transition:border-color .4s ease;
+}
+.menu-btn span{
+  display:block; width:18px; height:1.5px;
+  background:var(--navy);
+  transition:transform .45s cubic-bezier(.6,0,.2,1), background .4s ease;
+}
+body.menu-open .menu-btn{ border-color:rgba(239,232,218,.35); }
+body.menu-open .menu-btn span{ background:var(--ivory); }
+body.menu-open .menu-btn span:nth-child(1){ transform:translateY(4.25px) rotate(45deg); }
+body.menu-open .menu-btn span:nth-child(2){ transform:translateY(-4.25px) rotate(-45deg); }
+
+.menu-overlay{
+  position:fixed; inset:0; z-index:85;
+  background:linear-gradient(180deg, #13273A 0%, #0C1A28 100%);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:0 8vw;
+  opacity:0; visibility:hidden;
+  transition:opacity .5s ease, visibility .5s ease;
+}
+body.menu-open .menu-overlay{ opacity:1; visibility:visible; }
+body.menu-open{ overflow:hidden; }
+body.menu-open .site-head{
+  background:transparent;
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+  border-bottom-color:transparent;
+}
+body.menu-open .brand-mark{ color:var(--ivory); border-color:rgba(179,146,78,.75); }
+body.menu-open .brand-name{ color:var(--ivory); }
+.menu-link{
+  display:flex; align-items:baseline; gap:18px;
+  padding:3vh 0;
+  border-bottom:1px solid var(--cream-line);
+  font:370 clamp(28px, 7.4vw, 44px)/1.1 var(--serif);
+  color:var(--ivory);
+}
+.menu-link:first-child{ border-top:1px solid var(--cream-line); }
+.menu-link i{ font:340 13px/1 var(--serif); font-style:italic; color:var(--gold); }
+.menu-meta{
+  margin-top:5.5vh;
+  display:flex; flex-direction:column; gap:9px;
+  font-size:14px; color:var(--cream-soft);
+}
+.menu-meta a{ color:var(--ivory); }
+@media (min-width:1100px){ .menu-overlay{ display:none; } }
+
+/* ---------- Preloader ---------- */
+
+.preloader{
+  position:fixed; inset:0; z-index:300;
+  background:var(--navy-deep);
+  display:none;
+  align-items:center; justify-content:center;
+}
+html.has-js .preloader{ display:flex; }
+.pre-inner{ display:flex; flex-direction:column; align-items:center; gap:26px; }
+.pre-mark{
+  width:96px; height:96px; border-radius:50%;
+  border:1px solid rgba(179,146,78,.65);
+  display:flex; align-items:center; justify-content:center;
+  font:340 26px/1 var(--serif);
+  letter-spacing:.14em;
+  color:var(--ivory);
+}
+.pre-word{
+  font:700 10.5px/1 var(--sans);
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  color:rgba(239,232,218,.8);
+  text-indent:.42em;
+}
+.pre-bar{ width:150px; height:1px; background:rgba(239,232,218,.14); overflow:hidden; }
+.pre-bar i{ display:block; width:100%; height:100%; background:var(--gold); transform-origin:left center; }
+
+/* ---------- Header ---------- */
+
+.site-head{
+  position:fixed; top:0; left:0; right:0; z-index:90;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:26px 3.4vw;
+  border-bottom:1px solid transparent;
+  transition:background .5s ease, padding .5s ease, border-color .5s ease, backdrop-filter .5s ease;
+}
+.site-head.scrolled{
+  background:rgba(245,240,230,.82);
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  border-bottom-color:var(--line-soft);
+  padding-block:15px;
+}
+.brand{ display:flex; align-items:center; gap:16px; }
+.brand-mark{
+  width:40px; height:40px; border-radius:50%;
+  border:1px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font:390 13px/1 var(--serif);
+  letter-spacing:.1em;
+  color:var(--navy);
+  transition:background .4s ease, color .4s ease;
+}
+.brand:hover .brand-mark{ background:var(--navy); color:var(--ivory); border-color:var(--navy); }
+.brand-name{ font:390 17px/1.2 var(--serif); color:var(--navy); letter-spacing:.01em; }
+.brand-name em{ display:block; font:700 9px/1 var(--sans); font-style:normal; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-top:5px; }
+.site-nav{ display:flex; align-items:center; gap:38px; }
+.nav-link{
+  font:600 12.5px/1 var(--sans);
+  letter-spacing:.08em;
+  color:var(--ink-soft);
+  padding-bottom:4px;
+  background-image:linear-gradient(var(--terra), var(--terra));
+  background-repeat:no-repeat;
+  background-position:0 100%;
+  background-size:0 1px;
+  transition:color .35s ease, background-size .5s cubic-bezier(.6,0,.2,1);
+}
+.nav-link:hover{ color:var(--navy); background-size:100% 1px; }
+
+/* ---------- Hero ---------- */
+
+.hero{
+  position:relative;
+  height:100vh;
+  min-height:640px;
+  overflow:hidden;
+}
+.hero-inner{
+  position:absolute; left:0; right:0; top:13.5vh;
+  z-index:5;
+  text-align:center;
+  padding-inline:5vw;
+}
+.hero-eyebrow{
+  font:700 11px/1 var(--sans);
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.hero-eyebrow b{ color:var(--gold); font-weight:800; }
+.hero-title{
+  margin-top:3.4vh;
+  font-size:clamp(64px, 8.2vw, 132px);
+  font-weight:370;
+  line-height:1.02;
+  letter-spacing:-.02em;
+}
+.hero-sub{
+  margin:3.2vh auto 0;
+  max-width:520px;
+  font-size:15.5px;
+  line-height:1.8;
+  color:var(--ink-soft);
+}
+.hero-media{
+  position:absolute; inset:0; z-index:4;
+  clip-path:inset(58% 25% 8.5% 25% round 26px);
+  will-change:clip-path;
+  background:var(--navy-deep);
+}
+.hero-media img{ width:100%; height:100%; object-fit:cover; }
+.hero-scrim{
+  position:absolute; inset:0; z-index:2;
+  background:linear-gradient(180deg, rgba(12,26,40,.08) 30%, rgba(12,26,40,.58) 86%);
+}
+.hero-veil{
+  position:absolute; inset:0; z-index:2;
+  background:rgba(12,26,40,.34);
+  opacity:0;
+}
+.hero-line{
+  position:absolute; left:50%; bottom:11vh; z-index:6;
+  transform:translateX(-50%);
+  width:max-content; max-width:88vw;
+  font:340 clamp(26px,2.5vw,42px)/1.3 var(--serif);
+  font-style:italic;
+  color:var(--ivory);
+  text-align:center;
+  opacity:0;
+  pointer-events:none;
+}
+.hero-line em{ color:var(--gold); font-style:italic; }
+.hero-corner{
+  position:absolute; bottom:4.2vh; z-index:5;
+  font:600 10.5px/1.6 var(--sans);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.hero-corner.left{ left:3.4vw; text-align:left; }
+.hero-corner.right{ right:3.4vw; text-align:right; }
+.scroll-cue{
+  position:absolute; bottom:2.2vh; left:50%; z-index:5;
+  transform:translateX(-50%);
+  font:700 9.5px/1 var(--sans);
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  text-align:center;
+  text-indent:.4em;
+}
+.scroll-cue i{
+  display:block; width:1px; height:22px;
+  margin:9px auto 0;
+  background:rgba(27,46,66,.45);
+  transform-origin:top center;
+  animation:cue 2.4s cubic-bezier(.6,0,.3,1) infinite;
+}
+@keyframes cue{
+  0%{ transform:scaleY(0); opacity:0; }
+  45%{ transform:scaleY(1); opacity:1; }
+  100%{ transform:scaleY(1); opacity:0; }
+}
+
+/* ---------- 01 · The Practice ---------- */
+
+.statement{ padding:21vh 0 18vh; scroll-margin-top:60px; }
+.manifesto{
+  margin-top:5vh;
+  max-width:1240px;
+  font-size:clamp(40px, 4.5vw, 72px);
+  font-weight:370;
+  line-height:1.14;
+  letter-spacing:-.015em;
+}
+.statement-grid{
+  margin-top:9vh;
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:6vw;
+  align-items:start;
+}
+.st-aside{ display:flex; gap:26px; align-items:flex-start; padding-top:8px; }
+.st-rule{ width:1px; height:104px; background:var(--gold); transform-origin:top center; flex:0 0 auto; }
+.st-note{
+  font:340 24px/1.5 var(--serif);
+  font-style:italic;
+  color:var(--terra);
+  max-width:300px;
+}
+.st-copy{ max-width:600px; }
+.st-copy p{ color:var(--ink-soft); font-size:16.5px; }
+.st-copy p + p{ margin-top:26px; }
+.st-copy strong{ color:var(--navy); font-weight:600; }
+
+/* ---------- 02 · On the market (horizontal rail) ---------- */
+
+.works{ position:relative; padding:10vh 0 14vh; }
+html.gsap-on .works{
+  height:100vh;
+  min-height:680px;
+  padding:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.works-head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  margin-bottom:6vh;
+}
+html.gsap-on .works-head{ padding-top:11vh; margin-bottom:2vh; }
+.works-head h2{ margin-top:3vh; font-size:clamp(38px, 3.8vw, 58px); }
+.rail-status{ display:none; text-align:right; padding-bottom:6px; }
+html.gsap-on .rail-status{ display:block; }
+.rail-count{ font:340 15px/1 var(--serif); font-style:italic; color:var(--gold); letter-spacing:.08em; }
+.rail-hint{
+  display:block; margin-top:10px;
+  font:700 9.5px/1 var(--sans); letter-spacing:.3em; text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.rail{
+  display:flex;
+  flex-direction:column;
+  gap:13vh;
+}
+html.gsap-on .rail{
+  flex:1;
+  flex-direction:row;
+  align-items:center;
+  gap:5vw;
+  width:max-content;
+  padding-inline:6.5vw;
+  will-change:transform;
+}
+.panel{
+  width:min(1240px, 90vw);
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:3.4vw;
+  align-items:end;
+}
+html.gsap-on .panel{ width:68vw; margin:0; flex:0 0 auto; }
+.panel-media{
+  height:56vh;
+  min-height:380px;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+}
+.panel-media img{
+  width:100%; height:100%;
+  object-fit:cover;
+  transform:scale(1.12);
+  transition:transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.panel:hover .panel-media img{ transform:scale(1.16); }
+.panel-info{ padding-bottom:1vh; }
+.p-index{ font:340 15px/1 var(--serif); font-style:italic; color:var(--gold); letter-spacing:.1em; }
+.panel-info h3{ margin-top:16px; font-size:clamp(30px, 2.5vw, 42px); }
+.p-loc{
+  margin-top:12px;
+  font:700 10.5px/1.7 var(--sans);
+  letter-spacing:.26em; text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.p-rule{ height:1px; background:var(--line); margin:24px 0 20px; transform-origin:left center; }
+.p-row{ display:flex; align-items:baseline; justify-content:space-between; gap:20px; }
+.p-price{ font:390 26px/1 var(--serif); color:var(--navy); }
+.p-price b{ font-weight:390; color:var(--gold); }
+.p-area{ font:600 11px/1 var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--ink-faint); }
+.p-spec{ margin-top:14px; font-size:14px; line-height:1.8; color:var(--ink-soft); }
+.p-link{
+  display:inline-block; margin-top:24px;
+  font:700 11.5px/1 var(--sans); letter-spacing:.2em; text-transform:uppercase;
+  color:var(--navy);
+  padding-bottom:5px;
+  background-image:linear-gradient(var(--terra), var(--terra));
+  background-repeat:no-repeat; background-position:0 100%; background-size:36px 1px;
+  transition:background-size .5s cubic-bezier(.6,0,.2,1), color .35s ease;
+}
+.p-link:hover{ color:var(--terra); background-size:100% 1px; }
+.panel.endcap{
+  width:min(760px, 80vw);
+  display:flex; flex-direction:column;
+  justify-content:center; align-items:flex-start;
+  gap:0;
+}
+html.gsap-on .panel.endcap{ width:42vw; padding-right:4vw; }
+.panel.endcap h3{ font-size:clamp(34px, 3vw, 52px); line-height:1.12; }
+.panel.endcap .p-link{ margin-top:36px; }
+.rail-progress{
+  display:none;
+  align-items:center;
+  gap:20px;
+  width:min(440px, 38vw);
+  margin:5vh auto 0;
+}
+html.gsap-on .rail-progress{ display:flex; }
+.rail-progress .bar{ flex:1; height:1px; background:var(--line); }
+.rail-progress .bar i{ display:block; height:100%; width:100%; background:var(--gold); transform:scaleX(0); transform-origin:left center; }
+
+/* ---------- 03 · The Neighbourhoods ---------- */
+
+.hoods{ padding:22vh 0 20vh; scroll-margin-top:60px; position:relative; }
+.hoods-head{ position:relative; display:flex; align-items:flex-end; justify-content:space-between; }
+.hoods-head h2{ margin-top:3vh; font-size:clamp(38px, 3.8vw, 58px); }
+.hoods-hint{
+  font:340 17px/1.6 var(--serif); font-style:italic;
+  color:var(--ink-soft);
+  max-width:300px; text-align:right;
+  padding-bottom:8px;
+}
+.bn-ghost{
+  position:absolute; right:-2vw; top:-11vh;
+  font:600 clamp(120px, 14vw, 230px)/1 var(--serif);
+  color:transparent;
+  -webkit-text-stroke:1px rgba(20,40,60,.1);
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+}
+.hood-list{ margin-top:9vh; border-top:1px solid var(--line); counter-reset:hood; }
+.hood{
+  position:relative;
+  display:grid;
+  grid-template-columns:110px 1fr auto 60px;
+  align-items:center;
+  gap:2.5vw;
+  padding:4.4vh 1.2vw;
+  border-bottom:1px solid var(--line);
+  cursor:pointer;
+  transition:padding .55s cubic-bezier(.2,.7,.2,1);
+}
+.hood:hover{ padding-left:3.4vw; }
+.hood-index{ font:340 14px/1 var(--serif); font-style:italic; color:var(--gold); letter-spacing:.1em; }
+.hood-name{
+  font-size:clamp(36px, 3.4vw, 56px);
+  font-weight:370;
+  transition:color .4s ease;
+}
+.hood:hover .hood-name{ color:var(--terra); }
+.hood-note{ font-size:13.5px; letter-spacing:.05em; color:var(--ink-faint); text-align:right; transition:color .4s ease; }
+.hood:hover .hood-note{ color:var(--ink-soft); }
+.hood-arrow{
+  justify-self:end;
+  font-family:var(--serif); font-size:24px; color:var(--terra);
+  opacity:0; transform:translateX(-14px);
+  transition:opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.hood:hover .hood-arrow{ opacity:1; transform:translateX(0); }
+.hood-float{
+  position:fixed; left:0; top:0; z-index:80;
+  width:360px; height:264px;
+  border-radius:20px;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:0;
+  box-shadow:0 40px 100px rgba(12,26,40,.35);
+}
+
+/* ---------- The living map ---------- */
+
+.map-panel{
+  position:relative;
+  margin-top:9vh;
+  border:1px solid var(--line);
+  border-radius:34px;
+  padding:4vh 3vw 3.2vh;
+  background:var(--ivory);
+  overflow:hidden;
+}
+.map-panel::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(20,40,60,.04) 0 1px, transparent 1px 92px),
+    repeating-linear-gradient(90deg, rgba(20,40,60,.04) 0 1px, transparent 1px 92px);
+  pointer-events:none;
+}
+.map-head{
+  position:relative;
+  display:flex; justify-content:space-between; align-items:baseline;
+  gap:24px;
+  margin-bottom:2.5vh;
+}
+.map-note{ font:italic 340 19px/1.5 var(--serif); color:var(--ink-soft); }
+.map-coords{ font:700 10.5px/1 var(--sans); letter-spacing:.28em; text-transform:uppercase; color:var(--ink-faint); }
+.map-svg{ position:relative; display:block; width:100%; height:auto; max-height:74vh; margin-inline:auto; }
+.map-caption{
+  position:relative;
+  margin-top:2.2vh;
+  font:italic 340 17px/1.5 var(--serif);
+  color:var(--ink-faint);
+  min-height:1.6em;
+  transition:color .4s ease;
+}
+.map-caption.on{ color:var(--terra); }
+
+.map-water{ fill:rgba(20,40,60,.07); }
+.map-green{ fill:rgba(179,146,78,.12); stroke:rgba(179,146,78,.35); stroke-width:1; }
+.riverline{ stroke:rgba(20,40,60,.42); stroke-width:1.3; }
+.river-flow{
+  stroke:rgba(20,40,60,.22); stroke-width:1.3;
+  stroke-dasharray:3 15; stroke-linecap:round;
+  animation:mapflow 24s linear infinite;
+}
+.map-road{
+  stroke:rgba(20,40,60,.3); stroke-width:1.1;
+  stroke-dasharray:2 9; stroke-linecap:round;
+  fill:none;
+  animation:mapflow 46s linear infinite;
+}
+.bridge-draw{ stroke:rgba(20,40,60,.55); stroke-width:1.4; fill:none; stroke-linecap:round; }
+.bridge-tie{ stroke:rgba(20,40,60,.42); stroke-width:1; }
+.map-grid{ stroke:rgba(20,40,60,.16); stroke-width:1; }
+.map-towngrid{ stroke:rgba(20,40,60,.2); stroke-width:1; stroke-dasharray:3 6; }
+.map-tower{ fill:rgba(20,40,60,.3); }
+.map-label{ font:700 11.5px var(--sans); letter-spacing:.26em; text-transform:uppercase; fill:rgba(27,46,66,.4); }
+.map-label-it{ font:italic 340 14px var(--serif); fill:rgba(27,46,66,.5); letter-spacing:.05em; }
+@keyframes mapflow{ to{ stroke-dashoffset:-190; } }
+
+.map-pin{ cursor:pointer; }
+.pin-hit{ fill:#000; opacity:0; }
+.pin-dot{
+  fill:var(--gold);
+  transform-box:fill-box; transform-origin:center;
+  transition:transform .35s ease;
+}
+.pin-ring{ fill:none; stroke:var(--gold); stroke-width:1; opacity:.55; }
+.pin-pulse{
+  fill:none; stroke:var(--gold); stroke-width:1.1; opacity:0;
+  transform-box:fill-box; transform-origin:center;
+  animation:pinpulse 3.4s ease-out infinite;
+}
+@keyframes pinpulse{
+  0%{ transform:scale(.45); opacity:.6; }
+  70%{ transform:scale(2.1); opacity:0; }
+  100%{ transform:scale(2.1); opacity:0; }
+}
+.pin-name{
+  font:700 13.5px var(--sans);
+  letter-spacing:.22em; text-transform:uppercase;
+  fill:rgba(27,46,66,.82);
+  transition:fill .35s ease;
+}
+.map-pin:hover .pin-dot, .map-pin.active .pin-dot{ transform:scale(1.6); }
+.map-pin:hover .pin-name, .map-pin.active .pin-name{ fill:var(--terra); }
+.hood.active .hood-name{ color:var(--terra); }
+.hood.active .hood-note{ color:var(--ink-soft); }
+.hood.active .hood-arrow{ opacity:1; transform:translateX(0); }
+
+@media (prefers-reduced-motion: reduce){
+  .pin-pulse, .map-road, .river-flow{ animation:none; }
+}
+
+/* ---------- 04 · The Broker (the one dark navy section) ---------- */
+
+.broker{
+  position:relative;
+  margin:8vh 2.4vw 0;
+  background:linear-gradient(180deg, #13273A 0%, #0C1A28 100%);
+  color:var(--ivory);
+  border-radius:46px;
+  padding:15vh 6.5vw 12vh;
+  overflow:hidden;
+  scroll-margin-top:40px;
+}
+.broker::before{
+  content:"";
+  position:absolute; top:-220px; left:-160px;
+  width:640px; height:640px;
+  background:radial-gradient(circle, rgba(179,146,78,.14) 0%, transparent 62%);
+  pointer-events:none;
+}
+.broker-ghost{
+  position:absolute; right:2vw; top:8vh;
+  font:340 clamp(200px, 24vw, 380px)/1 var(--serif);
+  font-style:italic;
+  color:rgba(239,232,218,.045);
+  pointer-events:none; user-select:none;
+}
+.broker h2{ margin-top:4vh; color:var(--ivory); font-size:clamp(42px, 4.2vw, 68px); max-width:20ch; position:relative; }
+.broker-grid{
+  position:relative;
+  margin-top:7vh;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:6vw;
+  align-items:start;
+}
+.broker-copy p{ color:var(--cream-soft); font-size:16.5px; max-width:560px; }
+.broker-copy p + p{ margin-top:26px; }
+.principles{ border-top:1px solid var(--cream-line); }
+.principle{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:24px;
+  padding:3.8vh 0;
+  border-bottom:1px solid var(--cream-line);
+}
+.pr-num{ font:340 16px/1.6 var(--serif); font-style:italic; color:var(--gold); }
+.pr-body h3{ color:var(--ivory); font-size:23px; font-weight:390; }
+.pr-body p{ margin-top:10px; font-size:14.5px; line-height:1.75; color:rgba(239,232,218,.6); }
+.broker-stats{
+  position:relative;
+  margin-top:9vh;
+  padding-top:5.5vh;
+  border-top:1px solid var(--cream-line);
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:4vw;
+}
+.stat-num{ display:flex; align-items:baseline; gap:8px; font-family:var(--serif); color:var(--ivory); }
+.stat-num b{ font-size:clamp(42px, 3.6vw, 60px); font-weight:370; letter-spacing:-.01em; }
+.stat-num .fx{ font-size:clamp(24px, 2vw, 32px); font-weight:340; font-style:italic; color:var(--gold); }
+.stat-label{
+  display:block; margin-top:14px;
+  font:700 10.5px/1.7 var(--sans);
+  letter-spacing:.26em; text-transform:uppercase;
+  color:rgba(239,232,218,.52);
+}
+
+/* ---------- 05 · Begin ---------- */
+
+.contact{ padding:20vh 0 15vh; scroll-margin-top:40px; }
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:7vw;
+  align-items:start;
+}
+.contact h2{
+  margin-top:4.5vh;
+  font-size:clamp(54px, 5.4vw, 92px);
+  font-weight:370;
+  line-height:1.03;
+  letter-spacing:-.02em;
+}
+.contact-sub{
+  margin-top:4vh;
+  font:340 21px/1.6 var(--serif);
+  font-style:italic;
+  color:var(--terra);
+}
+.contact-cta{ margin-top:6vh; }
+.contact-rows{ border-top:1px solid var(--line); margin-top:1vh; }
+.c-row{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:24px;
+  align-items:baseline;
+  padding:3.2vh 4px;
+  border-bottom:1px solid var(--line);
+}
+.c-label{
+  font:700 10px/1 var(--sans);
+  letter-spacing:.3em; text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.c-value{ font-size:16.5px; color:var(--navy); line-height:1.7; }
+.c-value .u-link{ font-weight:500; }
+.c-value small{ display:block; font-size:12.5px; color:var(--ink-faint); letter-spacing:.04em; margin-top:2px; }
+
+/* ---------- Footer ---------- */
+
+.site-foot{
+  border-top:1px solid var(--line);
+  padding:4.5vh 3.4vw 5vh;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:30px;
+  font:600 11.5px/1.8 var(--sans);
+  letter-spacing:.06em;
+  color:var(--ink-faint);
+}
+.site-foot .f-mid{ letter-spacing:.22em; text-transform:uppercase; font-size:10px; }
+.site-foot a{ color:var(--ink-soft); transition:color .35s ease; }
+.site-foot a:hover{ color:var(--terra); }
+.to-top{ font-family:var(--serif); font-style:italic; font-size:14px; letter-spacing:.04em; }
+
+/* ============================================================
+   Responsive layout: tablets and phones
+   ============================================================ */
+
+@media (max-width:1099.98px){
+  body{ font-size:16px; }
+  .container{ width:88vw; }
+  .statement, .works, .hoods, .broker, .contact{ scroll-margin-top:78px; }
+
+  /* Header */
+  .site-head{ padding:16px 5vw; }
+  .site-head.scrolled{ padding-block:12px; }
+  .site-nav{ display:none; }
+  .menu-btn{ display:flex; }
+
+  /* Preloader */
+  .pre-word{ font-size:9px; letter-spacing:.3em; }
+
+  /* Hero becomes a calm flow layout */
+  .hero{ height:auto; min-height:0; overflow:visible; padding:15vh 0 0; }
+  .hero-inner{ position:static; padding-inline:6vw; }
+  .hero-title{ font-size:clamp(34px, 11.5vw, 84px); }
+  .hero-sub{ max-width:460px; font-size:14.5px; }
+  .hero-media{
+    position:relative; inset:auto;
+    clip-path:none;
+    width:88vw; height:52vh; min-height:320px;
+    margin:5.5vh auto 0;
+    border-radius:22px;
+    overflow:hidden;
+  }
+  .hero-veil{ display:none; }
+  .hero-scrim{ background:linear-gradient(180deg, rgba(12,26,40,0) 55%, rgba(12,26,40,.42) 100%); }
+  .hero-line{
+    position:static; transform:none;
+    opacity:1; pointer-events:auto;
+    width:auto; max-width:82vw;
+    margin:4.5vh auto 0;
+    color:var(--navy);
+    white-space:normal;
+    font-size:clamp(19px, 5.2vw, 26px);
+  }
+  .hero-corner, .scroll-cue{ display:none; }
+
+  /* Sections */
+  .statement{ padding:13vh 0 11vh; }
+  .manifesto{ font-size:clamp(30px, 7.2vw, 52px); }
+  .works{ padding:5vh 0 10vh; }
+  .works-head h2, .hoods-head h2{ font-size:clamp(29px, 7vw, 46px); }
+  .rail{ gap:9vh; }
+  .panel-media{ height:46vh; min-height:300px; }
+  .hoods{ padding:12vh 0 11vh; }
+  .hoods-hint{ display:none; }
+  .bn-ghost{ font-size:clamp(80px, 20vw, 150px); top:-3vh; right:-3vw; }
+  .hood{
+    grid-template-columns:52px 1fr;
+    row-gap:3px;
+    padding:3.4vh 0;
+    cursor:default;
+    align-items:baseline;
+  }
+  .hood:hover{ padding-left:0; }
+  .hood-index{ grid-column:1; grid-row:1; }
+  .hood-name{ grid-column:2; grid-row:1; font-size:clamp(26px, 6.6vw, 40px); }
+  .hood-note{ grid-column:2; grid-row:2; text-align:left; }
+  .hood-arrow{ display:none; }
+  .hood-float{ display:none; }
+  .map-panel{ margin-top:7vh; border-radius:22px; padding:3.2vh 4vw 3vh; }
+  .map-note{ font-size:16px; }
+  .map-coords{ font-size:9.5px; letter-spacing:.22em; }
+  .map-caption{ font-size:15px; }
+  .pin-name{ font-size:22px; letter-spacing:.16em; }
+  .map-label{ font-size:17px; letter-spacing:.2em; }
+  .map-label-it{ font-size:20px; }
+  .broker{ margin:6vh 4vw 0; border-radius:30px; padding:10vh 7vw 9vh; }
+  .broker-stats{ margin-top:4vh; padding-top:5vh; }
+  .broker h2{ font-size:clamp(30px, 7.4vw, 48px); }
+  .broker-ghost{ font-size:clamp(130px, 30vw, 240px); top:3vh; }
+  .contact{ padding:12vh 0 10vh; }
+  .contact h2{ font-size:clamp(38px, 10vw, 64px); }
+  .contact-sub{ font-size:clamp(17px, 4.6vw, 20px); }
+  .site-foot{ flex-direction:column; text-align:center; gap:12px; padding:5vh 6vw; }
+}
+
+@media (max-width:919.98px){
+  .statement-grid{ grid-template-columns:1fr; gap:5vh; }
+  .panel{ grid-template-columns:1fr; gap:26px; align-items:start; }
+  .panel-media{ height:44vh; }
+  .panel-info{ padding-bottom:0; }
+  .broker-grid{ grid-template-columns:1fr; gap:6vh; }
+  .contact-grid{ grid-template-columns:1fr; gap:7vh; }
+}
+
+@media (max-width:639.98px){
+  .hero-media{ height:44vh; }
+  .p-row{ flex-direction:column; align-items:flex-start; gap:6px; }
+  .broker-stats{ grid-template-columns:1fr; gap:4.5vh; padding-top:4.5vh; }
+  .c-row{ grid-template-columns:1fr; gap:6px; padding:2.7vh 2px; }
+  .lbl-minor{ display:none; }
+  .map-head{ flex-direction:column; align-items:flex-start; gap:6px; }
+  .pin-name{ font-size:26px; }
+  .map-label{ font-size:20px; }
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('has-js');document.body.classList.add('lock');</script>
+
+<!-- Preloader -->
+<div class="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <div class="pre-mark">SA</div>
+    <p class="pre-word">Your Next Address · Kolkata</p>
+    <div class="pre-bar"><i></i></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-head">
+  <a class="brand" href="#top" aria-label="Soumee Adak Properties, back to top">
+    <span class="brand-mark">SA</span>
+    <span class="brand-name">Soumee Adak<em>Properties · Kolkata</em></span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-link" href="#practice">The Practice</a>
+    <a class="nav-link" href="#homes">Homes</a>
+    <a class="nav-link" href="#hoods">Neighbourhoods</a>
+    <a class="nav-link" href="#about">The Broker</a>
+    <a class="pill head-pill" href="#contact" data-magnet>Enquire <span class="arr">→</span></a>
+  </nav>
+  <button class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<!-- Mobile menu -->
+<div class="menu-overlay">
+  <nav class="menu-nav" aria-label="Mobile">
+    <a class="menu-link" href="#practice"><i>01</i>The Practice</a>
+    <a class="menu-link" href="#homes"><i>02</i>Homes</a>
+    <a class="menu-link" href="#hoods"><i>03</i>Neighbourhoods</a>
+    <a class="menu-link" href="#about"><i>04</i>The Broker</a>
+    <a class="menu-link" href="#contact"><i>05</i>Enquire</a>
+  </nav>
+  <div class="menu-meta">
+    <a href="tel:+917384091096">+91 73840 91096</a>
+    <a href="mailto:soumeeadak@gmail.com">soumeeadak@gmail.com</a>
+    <span>Baguihati · Kolkata · By appointment</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Residential Sales <b>·</b> South Kolkata to New Town</p>
+      <h1 class="hero-title">
+        <span class="line-mask"><span class="line">Your Next Address,</span></span>
+        <span class="line-mask"><span class="line"><em>Kolkata.</em></span></span>
+      </h1>
+      <p class="hero-sub">A small, serious practice for buying and selling fine homes in Kolkata. Every property personally walked, weighed, and negotiated by Soumee Adak.</p>
+    </div>
+    <div class="hero-media ph">
+      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1800&auto=format&fit=crop" alt="A residence glowing warmly at dusk" fetchpriority="high">
+      <div class="hero-scrim"></div>
+      <div class="hero-veil"></div>
+    </div>
+    <p class="hero-line">Sixty homes seen. Six shortlisted. <em>One</em> that feels inevitable.</p>
+    <p class="hero-corner left">Baguihati · Kolkata</p>
+    <p class="hero-corner right">By appointment · Since 2014</p>
+    <p class="scroll-cue">Scroll<i></i></p>
+  </section>
+
+  <!-- ================= 01 · THE PRACTICE ================= -->
+  <section class="statement" id="practice">
+    <div class="container">
+      <p class="label" data-reveal><span>01</span> The Practice</p>
+      <h2 class="manifesto" data-split>A home in Kolkata is a <em>memory</em> you can live inside. My work is making sure it is also a <em>sound decision.</em></h2>
+      <div class="statement-grid">
+        <div class="st-aside" data-reveal>
+          <span class="st-rule" data-rule></span>
+          <p class="st-note">Fewer homes. Fuller attention.</p>
+        </div>
+        <div class="st-copy">
+          <p data-reveal>Soumee Adak Properties is a <strong>one-broker practice</strong>, kept deliberately small. No teams handing you off, no portals, no fifty open tabs. Each season I take on a handful of homes across south Kolkata and New Town, walk through every one of them myself, and show you only the few that deserve your evening.</p>
+          <p data-reveal>When a home is right, I say so plainly. When it is priced wrong, I say that too, and then I negotiate as if the cheque were my own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 · ON THE MARKET ================= -->
+  <section class="works" id="homes">
+    <div class="works-head container">
+      <div class="wh-left">
+        <p class="label" data-reveal><span>02</span> On the Market</p>
+        <h2 data-split>Three homes, shown <em>slowly.</em></h2>
+      </div>
+      <div class="rail-status">
+        <span class="rail-count">01 / 04</span>
+        <span class="rail-hint">Keep scrolling</span>
+      </div>
+    </div>
+    <div class="rail">
+
+      <article class="panel">
+        <div class="panel-media ph">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1800&auto=format&fit=crop" alt="The Alipore penthouse terrace at dusk" loading="lazy">
+        </div>
+        <div class="panel-info">
+          <p class="p-index">01</p>
+          <h3>The Alipore Penthouse</h3>
+          <p class="p-loc">Alipore · Kolkata 700027</p>
+          <div class="p-rule" data-rule></div>
+          <div class="p-row">
+            <p class="p-price"><b>₹</b> 7.4 Cr</p>
+            <p class="p-area">3,850 sq ft</p>
+          </div>
+          <p class="p-spec">Four bedrooms on a full floor, with a west terrace that catches the last light over old Alipore's canopy.</p>
+          <a class="p-link" href="#contact">Enquire about this home</a>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-media ph">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1800&auto=format&fit=crop" alt="A warm, book-lined living room in Ballygunge" loading="lazy">
+        </div>
+        <div class="panel-info">
+          <p class="p-index">02</p>
+          <h3>Ballygunge Place Residence</h3>
+          <p class="p-loc">Ballygunge Place · Kolkata 700019</p>
+          <div class="p-rule" data-rule></div>
+          <div class="p-row">
+            <p class="p-price"><b>₹</b> 4.6 Cr</p>
+            <p class="p-area">2,410 sq ft</p>
+          </div>
+          <p class="p-spec">Three bedrooms with corner light on two sides. 1962 bones, 2024 wiring, and a landing wide enough for a bookshelf.</p>
+          <a class="p-link" href="#contact">Enquire about this home</a>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-media ph">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1800&auto=format&fit=crop" alt="A white modern duplex in New Town" loading="lazy">
+        </div>
+        <div class="panel-info">
+          <p class="p-index">03</p>
+          <h3>New Town Lake Duplex</h3>
+          <p class="p-loc">Action Area II · New Town</p>
+          <div class="p-rule" data-rule></div>
+          <div class="p-row">
+            <p class="p-price"><b>₹</b> 2.9 Cr</p>
+            <p class="p-area">3,120 sq ft</p>
+          </div>
+          <p class="p-spec">A four-bedroom duplex facing the water, with double-height glass and parking for two cars that actually fit.</p>
+          <a class="p-link" href="#contact">Enquire about this home</a>
+        </div>
+      </article>
+
+      <article class="panel endcap">
+        <p class="p-index">And then some</p>
+        <h3 style="margin-top:18px;">Twelve more homes are sold <em>quietly,</em> off the page.</h3>
+        <a class="p-link" href="#contact">Ask for the private list</a>
+      </article>
+
+    </div>
+    <div class="rail-progress" aria-hidden="true">
+      <span class="bar"><i></i></span>
+    </div>
+  </section>
+
+  <!-- ================= 03 · THE NEIGHBOURHOODS ================= -->
+  <section class="hoods" id="hoods">
+    <div class="container">
+      <div class="hoods-head">
+        <div>
+          <p class="label" data-reveal><span>03</span> The Neighbourhoods</p>
+          <h2 data-split>The city, street by <em>street.</em></h2>
+        </div>
+        <p class="hoods-hint" data-reveal>Hover a name. If you already miss it, you know where you should live.</p>
+        <p class="bn-ghost" aria-hidden="true">কলকাতা</p>
+      </div>
+      <ul class="hood-list">
+        <li class="hood" data-hood="ballygunge" data-img="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+          <span class="hood-index">01</span>
+          <h3 class="hood-name">Ballygunge</h3>
+          <span class="hood-note">Old money, older trees</span>
+          <span class="hood-arrow">→</span>
+        </li>
+        <li class="hood" data-hood="alipore" data-img="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop">
+          <span class="hood-index">02</span>
+          <h3 class="hood-name">Alipore</h3>
+          <span class="hood-note">The city's quietest address</span>
+          <span class="hood-arrow">→</span>
+        </li>
+        <li class="hood" data-hood="southern" data-img="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200&auto=format&fit=crop">
+          <span class="hood-index">03</span>
+          <h3 class="hood-name">Southern Avenue</h3>
+          <span class="hood-note">Lake walks before the city wakes</span>
+          <span class="hood-arrow">→</span>
+        </li>
+        <li class="hood" data-hood="saltlake" data-img="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop">
+          <span class="hood-index">04</span>
+          <h3 class="hood-name">Salt Lake</h3>
+          <span class="hood-note">Ordered streets, generous courtyards</span>
+          <span class="hood-arrow">→</span>
+        </li>
+        <li class="hood" data-hood="newtown" data-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200&auto=format&fit=crop">
+          <span class="hood-index">05</span>
+          <h3 class="hood-name">New Town</h3>
+          <span class="hood-note">The skyline still being written</span>
+          <span class="hood-arrow">→</span>
+        </li>
+      </ul>
+
+      <!-- The living map -->
+      <div class="map-panel">
+        <div class="map-head">
+          <p class="map-note">Drawn from memory, to no particular scale.</p>
+          <p class="map-coords">22.5726° N · 88.3639° E</p>
+        </div>
+        <svg class="map-svg" viewBox="0 0 1200 780" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A stylised, hand-drawn map of Kolkata marking Ballygunge, Alipore, Southern Avenue, Salt Lake and New Town">
+
+          <!-- Hooghly: wash, centerline, flowing water -->
+          <path class="map-water" d="M 278,-15 C 266,80 218,150 226,255 C 232,350 196,445 216,555 C 228,640 204,715 212,795 L 256,795 C 248,715 272,640 260,555 C 240,445 276,350 270,255 C 262,150 310,80 322,-15 Z"/>
+          <path id="riverline" class="riverline" d="M 300,-15 C 288,80 240,150 248,255 C 254,350 218,445 238,555 C 250,640 226,715 234,795" fill="none"/>
+          <path class="river-flow" d="M 300,-15 C 288,80 240,150 248,255 C 254,350 218,445 238,555 C 250,640 226,715 234,795" fill="none"/>
+          <text class="map-label lbl lbl-minor" x="252" y="392" text-anchor="middle" transform="rotate(-83 252 392)">The Hooghly</text>
+
+          <!-- The Maidan -->
+          <rect class="map-green" x="305" y="340" width="96" height="168" rx="46" transform="rotate(4 353 424)"/>
+          <text class="map-label-it lbl" x="352" y="430" text-anchor="middle">the Maidan</text>
+
+          <!-- Rabindra Sarobar -->
+          <ellipse class="map-water" cx="505" cy="640" rx="56" ry="15" transform="rotate(-10 505 640)"/>
+          <text class="map-label-it lbl lbl-minor" x="505" y="672" text-anchor="middle">the Lakes</text>
+
+          <!-- Howrah Bridge -->
+          <path class="bridge-draw" d="M 194,183 L 298,177" fill="none"/>
+          <path class="bridge-draw" d="M 204,181 C 224,146 268,144 288,177" fill="none"/>
+          <path class="bridge-tie" d="M 214,166 L 214,182"/>
+          <path class="bridge-tie" d="M 231,154 L 231,181"/>
+          <path class="bridge-tie" d="M 248,151 L 248,180"/>
+          <path class="bridge-tie" d="M 265,153 L 265,179"/>
+          <path class="bridge-tie" d="M 280,162 L 280,178"/>
+          <text class="map-label lbl lbl-minor" x="150" y="152" text-anchor="middle">Howrah</text>
+
+          <!-- Vidyasagar Setu -->
+          <path class="bridge-draw" d="M 190,560 L 290,552" fill="none"/>
+          <path class="bridge-draw" d="M 240,556 L 240,514" fill="none"/>
+          <path class="bridge-tie" d="M 240,516 L 206,559"/>
+          <path class="bridge-tie" d="M 240,516 L 222,558"/>
+          <path class="bridge-tie" d="M 240,516 L 258,555"/>
+          <path class="bridge-tie" d="M 240,516 L 274,553"/>
+
+          <!-- Victoria Memorial -->
+          <path class="bridge-draw" d="M 338,528 a 14,14 0 0 1 28,0" fill="none"/>
+          <path class="bridge-tie" d="M 331,528 L 373,528"/>
+          <path class="bridge-tie" d="M 352,514 L 352,506"/>
+          <text class="map-label lbl lbl-minor" x="352" y="550" text-anchor="middle">Victoria Memorial</text>
+
+          <!-- Park Street -->
+          <circle class="lbl lbl-minor" cx="430" cy="330" r="4" fill="none" stroke="rgba(27,46,66,.5)" stroke-width="1.2"/>
+          <text class="map-label lbl lbl-minor" x="444" y="335">Park Street</text>
+
+          <!-- EM Bypass -->
+          <path class="map-road" d="M 655,115 C 685,255 640,420 632,540 C 628,610 598,685 585,755" fill="none"/>
+          <text class="map-label lbl lbl-minor" x="618" y="470" text-anchor="middle" transform="rotate(-86 618 470)">E M Bypass</text>
+
+          <!-- Arteries -->
+          <path class="map-road" d="M 432,338 C 468,420 520,505 556,578" fill="none"/>
+          <path class="map-road" d="M 424,340 C 406,430 386,515 377,586" fill="none"/>
+          <path class="map-road" d="M 428,340 C 452,440 478,545 502,622" fill="none"/>
+          <path class="map-road" d="M 438,328 C 545,286 660,258 780,244" fill="none"/>
+          <path class="map-road" d="M 802,236 C 862,202 934,172 994,156" fill="none"/>
+
+          <!-- Salt Lake grid -->
+          <path class="map-grid" d="M 745,196 L 745,290"/>
+          <path class="map-grid" d="M 775,192 L 775,288"/>
+          <path class="map-grid" d="M 805,190 L 805,286"/>
+          <path class="map-grid" d="M 835,190 L 835,284"/>
+          <path class="map-grid" d="M 738,212 L 842,206"/>
+          <path class="map-grid" d="M 738,238 L 842,232"/>
+          <path class="map-grid" d="M 740,264 L 842,258"/>
+
+          <!-- New Town -->
+          <path class="map-towngrid" d="M 960,102 L 960,172"/>
+          <path class="map-towngrid" d="M 1000,100 L 1000,170"/>
+          <path class="map-towngrid" d="M 1040,98 L 1040,168"/>
+          <path class="map-towngrid" d="M 1080,96 L 1080,166"/>
+          <path class="map-towngrid" d="M 950,118 L 1090,112"/>
+          <path class="map-towngrid" d="M 952,146 L 1090,140"/>
+          <path class="map-towngrid" d="M 954,170 L 1088,164"/>
+          <rect class="map-tower" x="1052" y="116" width="7" height="26"/>
+          <rect class="map-tower" x="1066" y="106" width="7" height="36"/>
+
+          <!-- Pins -->
+          <g class="map-pin" data-hood="alipore" data-name="Alipore" data-note="The city's quietest address">
+            <circle class="pin-hit" cx="375" cy="595" r="26"/>
+            <circle class="pin-pulse" cx="375" cy="595" r="9" style="animation-delay:0s"/>
+            <circle class="pin-ring" cx="375" cy="595" r="8.5"/>
+            <circle class="pin-dot" cx="375" cy="595" r="4.2"/>
+            <text class="pin-name" x="375" y="620" text-anchor="middle">Alipore</text>
+          </g>
+          <g class="map-pin" data-hood="ballygunge" data-name="Ballygunge" data-note="Old money, older trees">
+            <circle class="pin-hit" cx="560" cy="585" r="26"/>
+            <circle class="pin-pulse" cx="560" cy="585" r="9" style="animation-delay:.6s"/>
+            <circle class="pin-ring" cx="560" cy="585" r="8.5"/>
+            <circle class="pin-dot" cx="560" cy="585" r="4.2"/>
+            <text class="pin-name" x="576" y="581">Ballygunge</text>
+          </g>
+          <g class="map-pin" data-hood="southern" data-name="Southern Avenue" data-note="Lake walks before the city wakes">
+            <circle class="pin-hit" cx="505" cy="630" r="26"/>
+            <circle class="pin-pulse" cx="505" cy="630" r="9" style="animation-delay:1.2s"/>
+            <circle class="pin-ring" cx="505" cy="630" r="8.5"/>
+            <circle class="pin-dot" cx="505" cy="630" r="4.2"/>
+            <text class="pin-name" x="521" y="626">Southern Avenue</text>
+          </g>
+          <g class="map-pin" data-hood="saltlake" data-name="Salt Lake" data-note="Ordered streets, generous courtyards">
+            <circle class="pin-hit" cx="790" cy="242" r="26"/>
+            <circle class="pin-pulse" cx="790" cy="242" r="9" style="animation-delay:1.8s"/>
+            <circle class="pin-ring" cx="790" cy="242" r="8.5"/>
+            <circle class="pin-dot" cx="790" cy="242" r="4.2"/>
+            <text class="pin-name" x="806" y="238">Salt Lake</text>
+          </g>
+          <g class="map-pin" data-hood="newtown" data-name="New Town" data-note="The skyline still being written">
+            <circle class="pin-hit" cx="1002" cy="152" r="26"/>
+            <circle class="pin-pulse" cx="1002" cy="152" r="9" style="animation-delay:2.4s"/>
+            <circle class="pin-ring" cx="1002" cy="152" r="8.5"/>
+            <circle class="pin-dot" cx="1002" cy="152" r="4.2"/>
+            <text class="pin-name" x="1002" y="192" text-anchor="middle">New Town</text>
+          </g>
+
+          <!-- Compass -->
+          <g class="lbl">
+            <circle cx="1108" cy="58" r="20" fill="none" stroke="rgba(27,46,66,.3)" stroke-width="1"/>
+            <path d="M 1108,44 L 1112.5,58 L 1108,72 L 1103.5,58 Z" fill="rgba(179,146,78,.8)"/>
+            <text class="map-label" x="1108" y="30" text-anchor="middle">N</text>
+          </g>
+
+          <!-- The boat on the Hooghly -->
+          <g class="map-boat" opacity="0">
+            <path d="M -9,0 Q -3,-3.6 0,-3.8 Q 3,-3.6 9,0 Q 3,3.6 0,3.8 Q -3,3.6 -9,0 Z" fill="rgba(179,146,78,.85)"/>
+            <path d="M 0,-3.5 L 0,-9.5" stroke="rgba(179,146,78,.9)" stroke-width="1"/>
+          </g>
+        </svg>
+        <p class="map-caption">Trace the river. Hover the gold pins.</p>
+      </div>
+    </div>
+    <div class="hood-float ph" aria-hidden="true"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt=""></div>
+  </section>
+
+  <!-- ================= 04 · THE BROKER (dark) ================= -->
+  <section class="broker" id="about">
+    <p class="broker-ghost" aria-hidden="true">SA</p>
+    <p class="label light" data-reveal><span>04</span> The Broker</p>
+    <h2 data-split>Homes change hands. <em>Trust</em> should not.</h2>
+    <div class="broker-grid">
+      <div class="broker-copy">
+        <p data-reveal>I grew up off Southern Avenue, in a flat my grandfather bought on a handshake and kept for fifty years. That is the standard I hold every sale to. Twelve years in, the practice runs almost entirely on referral: families I moved once, calling again a decade later with a spare set of keys and a new question.</p>
+        <p data-reveal>I represent a small number of sellers each season, and I bring them buyers who are ready. Everything goes in writing. Every number can face your lawyer, your banker, and your father-in-law. And I stay reachable long after possession day.</p>
+      </div>
+      <div class="principles">
+        <div class="principle" data-reveal>
+          <span class="pr-num">01</span>
+          <div class="pr-body">
+            <h3>Few homes, chosen slowly</h3>
+            <p>I would rather show you six right homes than sixty possible ones.</p>
+          </div>
+        </div>
+        <div class="principle" data-reveal>
+          <span class="pr-num">02</span>
+          <div class="pr-body">
+            <h3>One honest number</h3>
+            <p>Valuations you can take to your bank, your lawyer, and your family without flinching.</p>
+          </div>
+        </div>
+        <div class="principle" data-reveal>
+          <span class="pr-num">03</span>
+          <div class="pr-body">
+            <h3>There after the keys</h3>
+            <p>Registration, mutation, the plumber's cousin. I stay on the phone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="broker-stats">
+      <div class="stat" data-reveal>
+        <p class="stat-num"><b data-count="12">12</b><span class="fx">yrs</span></p>
+        <span class="stat-label">One city, one practice</span>
+      </div>
+      <div class="stat" data-reveal>
+        <p class="stat-num"><b data-count="200">200</b><span class="fx">+</span></p>
+        <span class="stat-label">Sets of keys handed over</span>
+      </div>
+      <div class="stat" data-reveal>
+        <p class="stat-num"><span class="fx">₹</span><b data-count="310">310</b><span class="fx">Cr</span></p>
+        <span class="stat-label">Negotiated, quietly</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 · BEGIN ================= -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-main">
+        <p class="label" data-reveal><span>05</span> Begin</p>
+        <h2>
+          <span class="line-mask"><span class="line">Let's find your</span></span>
+          <span class="line-mask"><span class="line"><em>next address.</em></span></span>
+        </h2>
+        <p class="contact-sub" data-reveal>One conversation, no obligation. The chai is on me.</p>
+        <p class="contact-cta" data-reveal>
+          <a class="pill big" href="mailto:soumeeadak@gmail.com?subject=A%20home%20in%20Kolkata" data-magnet>Book a viewing <span class="arr">→</span></a>
+        </p>
+      </div>
+      <div class="contact-rows">
+        <div class="c-row" data-reveal>
+          <span class="c-label">Call</span>
+          <p class="c-value"><a class="u-link" href="tel:+917384091096">+91 73840 91096</a></p>
+        </div>
+        <div class="c-row" data-reveal>
+          <span class="c-label">WhatsApp</span>
+          <p class="c-value"><a class="u-link" href="https://wa.me/917384091096" target="_blank" rel="noopener">Message Soumee directly</a></p>
+        </div>
+        <div class="c-row" data-reveal>
+          <span class="c-label">Write</span>
+          <p class="c-value"><a class="u-link" href="mailto:soumeeadak@gmail.com">soumeeadak@gmail.com</a></p>
+        </div>
+        <div class="c-row" data-reveal>
+          <span class="c-label">Visit</span>
+          <p class="c-value">DP Abasan, Jyangra, Baguihati, Kolkata 700059<small>By appointment</small></p>
+        </div>
+        <div class="c-row" data-reveal>
+          <span class="c-label">RERA</span>
+          <p class="c-value">WBRERA/A/KOL/2023/000481</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <p>© 2026 Soumee Adak Properties</p>
+  <p class="f-mid">Baguihati · Kolkata · West Bengal</p>
+  <p>Images are representative &nbsp;·&nbsp; <a class="to-top" href="#top">Back to the top ↑</a></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+
+  var docEl   = document.documentElement;
+  var body    = document.body;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var deskMQ  = window.matchMedia('(min-width: 1100px)');
+  var finePtr = window.matchMedia('(pointer: fine)').matches;
+  var pre     = document.querySelector('.preloader');
+  var preDone = false;
+
+  function unlock(){ body.classList.remove('lock'); }
+  function killPre(){
+    if(!preDone){
+      preDone = true;
+      if(pre){ pre.style.display = 'none'; }
+      unlock();
+    }
+  }
+  /* Safety net: never trap the visitor behind the preloader */
+  setTimeout(killPre, 4500);
+
+  /* Graceful photo fallback: hide broken images, show the branded placeholder */
+  Array.prototype.forEach.call(document.querySelectorAll('.ph img'), function(img){
+    img.addEventListener('error', function(){ img.classList.add('is-broken'); });
+    if(img.complete && img.naturalWidth === 0 && img.src){ img.classList.add('is-broken'); }
+  });
+
+  /* Header state on scroll (plain JS, works even without GSAP) */
+  var head = document.querySelector('.site-head');
+  function onScroll(){ head.classList.toggle('scrolled', window.scrollY > 40); }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* Mobile menu (works with or without GSAP) */
+  var menuBtn = document.querySelector('.menu-btn');
+  var menuIsOpen = false;
+  function setMenu(open){
+    menuIsOpen = open;
+    body.classList.toggle('menu-open', open);
+    if(menuBtn){ menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+    if(open && window.gsap && !reduced){
+      gsap.fromTo('.menu-link', { y:34, autoAlpha:0 },
+        { y:0, autoAlpha:1, duration:.7, stagger:.06, ease:'power3.out', delay:.12, overwrite:'auto' });
+      gsap.fromTo('.menu-meta', { autoAlpha:0 },
+        { autoAlpha:1, duration:.6, delay:.48, overwrite:'auto' });
+    }
+  }
+  if(menuBtn){
+    menuBtn.addEventListener('click', function(){ setMenu(!menuIsOpen); });
+    Array.prototype.forEach.call(document.querySelectorAll('.menu-overlay a'), function(a){
+      a.addEventListener('click', function(){ setMenu(false); });
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && menuIsOpen){ setMenu(false); }
+    });
+  }
+
+  /* Map pins and neighbourhood rows highlight each other */
+  var mapPinsEls  = document.querySelectorAll('.map-pin');
+  var hoodSyncRows= document.querySelectorAll('.hood[data-hood]');
+  var mapCaption  = document.querySelector('.map-caption');
+  var mapCapDefault = '';
+  if(mapCaption){
+    if(!finePtr){ mapCaption.textContent = 'Trace the river. Tap the gold pins.'; }
+    mapCapDefault = mapCaption.textContent;
+  }
+  function mapHot(key, on){
+    Array.prototype.forEach.call(mapPinsEls, function(p){
+      p.classList.toggle('active', !!on && p.getAttribute('data-hood') === key);
+    });
+    Array.prototype.forEach.call(hoodSyncRows, function(r){
+      r.classList.toggle('active', !!on && r.getAttribute('data-hood') === key);
+    });
+    if(mapCaption){
+      if(on){
+        var src = null;
+        Array.prototype.forEach.call(mapPinsEls, function(p){
+          if(p.getAttribute('data-hood') === key){ src = p; }
+        });
+        if(src){ mapCaption.textContent = src.getAttribute('data-name') + ' · ' + src.getAttribute('data-note'); }
+        mapCaption.classList.add('on');
+      } else {
+        mapCaption.textContent = mapCapDefault;
+        mapCaption.classList.remove('on');
+      }
+    }
+  }
+  Array.prototype.forEach.call(mapPinsEls, function(p){
+    var key = p.getAttribute('data-hood');
+    p.addEventListener('mouseenter', function(){ mapHot(key, true); });
+    p.addEventListener('mouseleave', function(){ mapHot(null, false); });
+    p.addEventListener('click', function(){ mapHot(key, true); });
+  });
+  Array.prototype.forEach.call(hoodSyncRows, function(r){
+    var key = r.getAttribute('data-hood');
+    r.addEventListener('mouseenter', function(){ mapHot(key, true); });
+    r.addEventListener('mouseleave', function(){ mapHot(null, false); });
+  });
+
+  /* Without GSAP, or with reduced motion, serve the calm static page */
+  if(!(window.gsap && window.ScrollTrigger) || reduced){
+    killPre();
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* The horizontal-rail layout only exists on desktop widths */
+  function syncLayoutClass(){ docEl.classList.toggle('gsap-on', deskMQ.matches); }
+  syncLayoutClass();
+  if(deskMQ.addEventListener){ deskMQ.addEventListener('change', syncLayoutClass); }
+  else if(deskMQ.addListener){ deskMQ.addListener(syncLayoutClass); }
+
+  /* ---------- Utility: split a headline into masked lines ---------- */
+  function splitToLines(el){
+    var tokens = [];
+    Array.prototype.forEach.call(el.childNodes, function(n){
+      if(n.nodeType === 3){
+        n.textContent.split(/\s+/).forEach(function(w){ if(w){ tokens.push(w); } });
+      } else if(n.nodeType === 1){
+        tokens.push(n.outerHTML);
+      }
+    });
+    el.innerHTML = tokens.map(function(t){ return '<span class="tk">' + t + '</span>'; }).join(' ');
+    var spans = el.querySelectorAll('.tk');
+    var lines = [], current = [], top = null;
+    Array.prototype.forEach.call(spans, function(s){
+      var t = s.offsetTop;
+      if(top === null || Math.abs(t - top) < 6){
+        current.push(s);
+        if(top === null){ top = t; }
+      } else {
+        lines.push(current);
+        current = [s];
+        top = t;
+      }
+    });
+    if(current.length){ lines.push(current); }
+    el.innerHTML = '';
+    lines.forEach(function(lineTokens){
+      var mask  = document.createElement('span');
+      mask.className = 'line-mask';
+      var inner = document.createElement('span');
+      inner.className = 'line';
+      inner.innerHTML = lineTokens.map(function(s){ return s.outerHTML; }).join(' ');
+      mask.appendChild(inner);
+      el.appendChild(mask);
+    });
+  }
+
+  function start(){
+
+    /* ---------- Preloader + hero entrance ---------- */
+    var intro = gsap.timeline({ defaults:{ ease:'power4.out' } });
+    intro
+      .from('.pre-mark', { scale:.82, autoAlpha:0, duration:.7, ease:'power3.out' })
+      .from('.pre-word', { autoAlpha:0, letterSpacing:'.7em', duration:.85, ease:'power3.out' }, '-=.35')
+      .from('.pre-bar i', { scaleX:0, duration:.75, ease:'power2.inOut' }, '-=.45')
+      .to('.preloader',  { yPercent:-100, duration:.95, ease:'power4.inOut', delay:.2 })
+      .add(function(){ unlock(); preDone = true; }, '-=.9')
+      .from('.hero-title .line', { yPercent:114, duration:1.3, stagger:.1 }, '-=.5')
+      .from(['.hero-eyebrow', '.hero-sub'], { y:26, autoAlpha:0, duration:.9, stagger:.09 }, '-=.9')
+      .from('.hero-media', { y:80, autoAlpha:0, duration:1.15, ease:'power3.out' }, '-=1')
+      .from(['.hero-corner', '.scroll-cue'], { autoAlpha:0, duration:.8, ease:'power2.out' }, '-=.6')
+      .set('.preloader', { display:'none' });
+
+    var mm = gsap.matchMedia();
+
+    /* ---------- Hero: cinematic expansion on scroll (desktop only) ---------- */
+    mm.add('(min-width: 1100px)', function(){
+    gsap.fromTo('.hero-media img', { scale:1.18 }, {
+      scale:1, ease:'none',
+      scrollTrigger:{ trigger:'.hero', start:'top top', end:'+=130%', scrub:true }
+    });
+    var heroTl = gsap.timeline({
+      scrollTrigger:{
+        trigger:'.hero',
+        start:'top top',
+        end:'+=130%',
+        scrub:true,
+        pin:true,
+        anticipatePin:1
+      }
+    });
+    heroTl
+      .fromTo('.hero-media',
+        { clipPath:'inset(58% 25% 8.5% 25% round 26px)' },
+        { clipPath:'inset(0% 0% 0% 0% round 0px)', ease:'none', duration:1, immediateRender:false }, 0)
+      .to('.hero-inner', { y:-110, autoAlpha:0, ease:'none', duration:.55 }, 0)
+      .to('.hero-corner', { autoAlpha:0, duration:.25, ease:'none' }, 0)
+      .to('.scroll-cue', { autoAlpha:0, duration:.2, ease:'none' }, 0)
+      .to('.hero-veil', { opacity:1, duration:.45, ease:'none' }, .45)
+      .fromTo('.hero-line', { y:46, autoAlpha:0 }, { y:0, autoAlpha:1, duration:.35, ease:'none' }, .62);
+    });
+
+    /* ---------- Split headlines that reveal on scroll ---------- */
+    var doSplit = deskMQ.matches;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-split]'), function(el){
+      if(doSplit){
+        splitToLines(el);
+        gsap.from(el.querySelectorAll('.line'), {
+          yPercent:114, duration:1.2, stagger:.09, ease:'power4.out',
+          scrollTrigger:{ trigger:el, start:'top 85%', once:true }
+        });
+      } else {
+        gsap.from(el, {
+          y:36, autoAlpha:0, duration:1.05, ease:'power3.out',
+          scrollTrigger:{ trigger:el, start:'top 88%', once:true }
+        });
+      }
+    });
+
+    /* Contact headline uses pre-built masks */
+    gsap.from('.contact h2 .line', {
+      yPercent:114, duration:1.25, stagger:.1, ease:'power4.out',
+      scrollTrigger:{ trigger:'.contact h2', start:'top 85%', once:true }
+    });
+
+    /* ---------- Generic soft reveals ---------- */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-reveal]'), function(el){
+      gsap.from(el, {
+        y:36, autoAlpha:0, duration:1.05, ease:'power3.out',
+        scrollTrigger:{ trigger:el, start:'top 88%', once:true }
+      });
+    });
+
+    /* Hairlines that draw themselves */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-rule]'), function(el){
+      var vertical = el.classList.contains('st-rule');
+      gsap.from(el, vertical ? {
+        scaleY:0, duration:1.1, ease:'power3.inOut',
+        scrollTrigger:{ trigger:el, start:'top 88%', once:true }
+      } : {
+        scaleX:0, duration:1.1, ease:'power3.inOut',
+        scrollTrigger:{ trigger:el, start:'top 92%', once:true }
+      });
+    });
+
+    /* Neighbourhood rows cascade in */
+    gsap.from('.hood', {
+      y:44, autoAlpha:0, duration:1, stagger:.09, ease:'power3.out',
+      scrollTrigger:{ trigger:'.hood-list', start:'top 82%', once:true }
+    });
+
+    /* Counters in the dark section */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-count]'), function(el){
+      var end = parseFloat(el.getAttribute('data-count'));
+      var obj = { v:0 };
+      gsap.to(obj, {
+        v:end, duration:2.2, ease:'power2.out',
+        scrollTrigger:{ trigger:el, start:'top 88%', once:true },
+        onUpdate:function(){ el.textContent = Math.round(obj.v).toString(); }
+      });
+    });
+
+    /* The dark slab drifts up into place */
+    gsap.from('.broker', {
+      y:80, duration:1.3, ease:'power3.out',
+      scrollTrigger:{ trigger:'.broker', start:'top 92%', once:true }
+    });
+
+    /* ---------- Horizontal rail for the homes (desktop only) ---------- */
+    mm.add('(min-width: 1100px)', function(){
+    var rail   = document.querySelector('.rail');
+    var works  = document.querySelector('.works');
+    var barEl  = document.querySelector('.rail-progress .bar i');
+    var countEl= document.querySelector('.rail-count');
+    var panels = document.querySelectorAll('.panel');
+    var current = -1;
+
+    function railDist(){ return Math.max(0, rail.scrollWidth - window.innerWidth); }
+
+    var railTween = gsap.to(rail, {
+      x:function(){ return -railDist(); },
+      ease:'none',
+      scrollTrigger:{
+        trigger:works,
+        start:'top top',
+        end:function(){ return '+=' + railDist(); },
+        scrub:true,
+        pin:true,
+        anticipatePin:1,
+        invalidateOnRefresh:true,
+        onUpdate:function(self){
+          if(barEl){ barEl.style.transform = 'scaleX(' + self.progress + ')'; }
+          var idx = Math.min(panels.length - 1, Math.floor(self.progress * panels.length));
+          if(idx !== current && countEl){
+            current = idx;
+            countEl.textContent = ('0' + (idx + 1)).slice(-2) + ' / ' + ('0' + panels.length).slice(-2);
+          }
+        }
+      }
+    });
+
+    /* Gentle parallax inside each frame while the rail moves */
+    Array.prototype.forEach.call(document.querySelectorAll('.panel-media img'), function(img){
+      gsap.fromTo(img, { xPercent:-4.5 }, {
+        xPercent:4.5, ease:'none',
+        scrollTrigger:{
+          trigger:img.closest('.panel'),
+          containerAnimation:railTween,
+          start:'left right',
+          end:'right left',
+          scrub:true
+        }
+      });
+    });
+
+    /* Captions rise as their panel slides in */
+    Array.prototype.forEach.call(panels, function(p, i){
+      if(i === 0){ return; }
+      var info = p.querySelector('.panel-info') || p;
+      gsap.from(info, {
+        y:44, autoAlpha:0, duration:1, ease:'power3.out',
+        scrollTrigger:{
+          trigger:p,
+          containerAnimation:railTween,
+          start:'left 82%',
+          once:true
+        }
+      });
+    });
+    });
+
+    /* On smaller screens the homes stack vertically and drift in */
+    mm.add('(max-width: 1099.98px)', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.panel'), function(p){
+        gsap.from(p, {
+          y:56, autoAlpha:0, duration:1.05, ease:'power3.out',
+          scrollTrigger:{ trigger:p, start:'top 90%', once:true }
+        });
+      });
+    });
+
+    /* ---------- Neighbourhoods: image that follows the cursor ---------- */
+    var hoodsWrap = document.querySelector('.hoods');
+    var floatEl   = document.querySelector('.hood-float');
+    var floatImg  = floatEl ? floatEl.querySelector('img') : null;
+    var hoodRows  = document.querySelectorAll('.hood');
+    if(hoodsWrap && floatEl && floatImg && finePtr){
+      gsap.set(floatEl, { xPercent:-50, yPercent:-52, scale:.9, autoAlpha:0 });
+      var fx = gsap.quickTo(floatEl, 'x', { duration:.55, ease:'power3' });
+      var fy = gsap.quickTo(floatEl, 'y', { duration:.55, ease:'power3' });
+      hoodsWrap.addEventListener('mousemove', function(e){ fx(e.clientX); fy(e.clientY); });
+      Array.prototype.forEach.call(hoodRows, function(row){
+        row.addEventListener('mouseenter', function(){
+          var src = row.getAttribute('data-img');
+          if(src && floatImg.getAttribute('src') !== src){
+            floatImg.classList.remove('is-broken');
+            floatImg.src = src;
+          }
+          gsap.to(floatEl, {
+            autoAlpha:1, scale:1,
+            rotate:gsap.utils.random(-3.5, 3.5),
+            duration:.5, ease:'power3.out'
+          });
+        });
+      });
+      var hoodList = document.querySelector('.hood-list');
+      hoodList.addEventListener('mouseleave', function(){
+        gsap.to(floatEl, { autoAlpha:0, scale:.9, duration:.4, ease:'power2.out' });
+      });
+    }
+
+    /* ---------- The living map: draw-on entrance and the boat ---------- */
+    var mapPanel  = document.querySelector('.map-panel');
+    var riverPath = document.getElementById('riverline');
+    if(mapPanel && riverPath){
+      var rl = riverPath.getTotalLength();
+      var mtl = gsap.timeline({
+        scrollTrigger:{ trigger:mapPanel, start:'top 78%', once:true }
+      });
+      mtl.from(mapPanel, { y:60, autoAlpha:0, duration:1.1, ease:'power3.out' }, 0)
+         .fromTo(riverPath,
+           { strokeDasharray:rl, strokeDashoffset:rl },
+           { strokeDashoffset:0, duration:2.1, ease:'power2.inOut' }, .35)
+         .from('.map-water', { autoAlpha:0, duration:1.2, ease:'power2.out', stagger:.25 }, 1.1)
+         .from('.river-flow', { autoAlpha:0, duration:1 }, 1.7)
+         .from('.map-green', { autoAlpha:0, scale:.94, transformOrigin:'50% 50%', duration:1 }, 1)
+         .from('.bridge-tie', { autoAlpha:0, duration:.5, stagger:.045 }, 1.9)
+         .from('.map-road', { autoAlpha:0, duration:.8, stagger:.12 }, 1.5)
+         .from('.map-grid', { autoAlpha:0, duration:.7, stagger:.04 }, 1.8)
+         .from('.map-towngrid', { autoAlpha:0, duration:.7, stagger:.05 }, 1.9)
+         .from('.map-tower', { autoAlpha:0, scaleY:0, transformOrigin:'50% 100%', duration:.6, stagger:.12 }, 2.1)
+         .from('.map-pin', { scale:0, transformOrigin:'50% 50%', duration:.8, ease:'back.out(1.8)', stagger:.13 }, 2)
+         .from('.lbl', { autoAlpha:0, y:6, duration:.6, stagger:.05 }, 2.4);
+      Array.prototype.forEach.call(document.querySelectorAll('.bridge-draw'), function(bp, i){
+        var bl = bp.getTotalLength();
+        mtl.fromTo(bp,
+          { strokeDasharray:bl, strokeDashoffset:bl },
+          { strokeDashoffset:0, duration:.7, ease:'power2.out' }, 1.5 + i * .12);
+      });
+      mtl.add(function(){
+        var boat = document.querySelector('.map-boat');
+        if(!boat){ return; }
+        gsap.to(boat, { autoAlpha:1, duration:.8 });
+        var drift = { t:0 };
+        gsap.to(drift, {
+          t:1, duration:46, repeat:-1, yoyo:true, ease:'none',
+          onUpdate:function(){
+            var d  = (0.04 + drift.t * 0.92) * rl;
+            var p1 = riverPath.getPointAtLength(Math.max(0, d - 1.5));
+            var p2 = riverPath.getPointAtLength(Math.min(rl, d + 1.5));
+            var pt = riverPath.getPointAtLength(d);
+            var ang = Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180 / Math.PI;
+            boat.setAttribute('transform', 'translate(' + pt.x + ',' + pt.y + ') rotate(' + ang + ')');
+          }
+        });
+      }, 2.6);
+    }
+
+    /* ---------- Magnetic pills (precision pointers only) ---------- */
+    if(finePtr){
+    Array.prototype.forEach.call(document.querySelectorAll('[data-magnet]'), function(btn){
+      var qx = gsap.quickTo(btn, 'x', { duration:.4, ease:'power3' });
+      var qy = gsap.quickTo(btn, 'y', { duration:.4, ease:'power3' });
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        qx((e.clientX - (r.left + r.width / 2)) * .25);
+        qy((e.clientY - (r.top + r.height / 2)) * .35);
+      });
+      btn.addEventListener('mouseleave', function(){
+        gsap.to(btn, { x:0, y:0, duration:.8, ease:'elastic.out(1, .45)' });
+      });
+    });
+    }
+
+    /* Preload the neighbourhood images once everything else has settled */
+    window.addEventListener('load', function(){
+      if(finePtr && deskMQ.matches){
+        Array.prototype.forEach.call(hoodRows, function(row){
+          var s = row.getAttribute('data-img');
+          if(s){ (new Image()).src = s; }
+        });
+      }
+      ScrollTrigger.refresh();
+    });
+
+    requestAnimationFrame(function(){ ScrollTrigger.refresh(); });
+  }
+
+  /* Let the serif land before measuring lines; the preloader covers the wait */
+  var started = false;
+  function boot(){ if(!started){ started = true; start(); } }
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(boot);
+    setTimeout(boot, 1200);
+  } else {
+    boot();
+  }
+})();
+</script>
+
+</body>
+</html>
